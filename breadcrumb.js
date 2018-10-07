@@ -1,23 +1,23 @@
 const { Subject } = require('rxjs');
 
 const path = new Subject();
-const breadCrumb = new Array();
+const breadcrumb = new Array();
 
-pushBreadCrumb = link => {
-  if (breadCrumb.indexOf(link) !== -1) {
-    breadCrumb.splice(breadCrumb.indexOf(link), breadCrumb.length)
+pushBreadcrumb = link => {
+  if (breadcrumb.indexOf(link) !== -1) {
+    breadcrumb.splice(breadcrumb.indexOf(link), breadcrumb.length)
   }
-  breadCrumb.push(link)
+  breadcrumb.push(link)
 }
 
 path
 .subscribe(
-  link => pushBreadCrumb(link)
+  link => pushBreadcrumb(link)
 );
 
 click = (link) => {
   path.next(link);
-  console.log(breadCrumb.join("->"));
+  console.log(breadcrumb.join("->"));
 }
 
 click('Filmes');
