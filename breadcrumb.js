@@ -15,7 +15,7 @@ path
   link => pushBreadcrumb(link)
 );
 
-click = (link) => {
+click = link => {
   path.next(link);
   console.log(breadcrumb.join("->"));
 }
