@@ -1,6 +1,6 @@
 const { Observable } = require('rxjs');
 
-const breadCrumb = new Array();
+const breadcrumb = new Array();
 
 const observable = Observable.create(function (observer) {
   observer.next('Filmes');
@@ -11,7 +11,7 @@ const observable = Observable.create(function (observer) {
 });
 
 observable.subscribe({
-  next: link => breadCrumb.push(link),
+  next: link => breadcrumb.push(link),
   error: err => console.error(`Mostra se algo der errado: ${err}`),
-  complete: () => console.log(breadCrumb.join("->"))
+  complete: () => console.log(breadcrumb.join("->"))
 });
