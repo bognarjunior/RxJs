@@ -1,6 +1,6 @@
 const { Subject } = require('rxjs');
 
-const caminho = new Subject();
+const path = new Subject();
 const breadCrumb = new Array();
 
 pushBreadCrumb = link => {
@@ -10,13 +10,13 @@ pushBreadCrumb = link => {
   breadCrumb.push(link)
 }
 
-caminho
+path
 .subscribe(
   link => pushBreadCrumb(link)
 );
 
 click = (link) => {
-  caminho.next(link);
+  path.next(link);
   console.log(breadCrumb.join("->"));
 }
 
