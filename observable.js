@@ -12,6 +12,6 @@ const observable = Observable.create(function (observer) {
 
 observable.subscribe({
   next: link => breadCrumb.push(link),
-  error: err => console.error('Mostra se algo der errado: ' + err),
+  error: err => console.error(`Mostra se algo der errado: ${err}`),
   complete: () => console.log(breadCrumb.join("->"))
 });
