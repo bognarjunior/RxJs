@@ -1,13 +1,6 @@
 const { Subject, from } = require('rxjs');
 const { filter, take, distinct, skipWhile, merge } = require('rxjs/operators');
 
-const pessoa2 = new Subject();
-const pessoa3 = new Subject();
-
-const pizzasPessoa1 = new Array();
-const pizzasPessoa2 = new Array();
-const pizzasPessoa3 = new Array();
-
 class Pizza {
   constructor(name) {
     this.name = name;
@@ -27,6 +20,13 @@ class PizzaDoce extends Pizza {
     this.type = 'Doce'
   }
 }
+
+const pessoa2 = new Subject();
+const pessoa3 = new Subject();
+
+const pizzasPessoa1 = new Array();
+const pizzasPessoa2 = new Array();
+const pizzasPessoa3 = new Array();
 
 const calabresa = new PizzaSalagada('Calabresa');
 const mussarela = new PizzaSalagada('Mussarela');
