@@ -64,7 +64,7 @@ const pizzas = [
 pizzasSalgadas = (pizza$) => pizza$.pipe(
   filter(pizza => (pizza.type === 'Salgada' && pizza.name !== 'Mussarela')),
   distinct(),
-  take(3)
+  take(5)
 );
 
 pizzasDoces = (pizza$) => pizza$.pipe(
@@ -80,7 +80,7 @@ salgadas$.pipe(merge(doces$)).subscribe(
   pizza => pizzasPessoa1.push(pizza)
 );
 
-/*
+/* 
 pessoa1Salgada
 .pipe(
   filter(pizza => pizza.type === 'Salgada' && pizza.name !== 'Mussarela'),
