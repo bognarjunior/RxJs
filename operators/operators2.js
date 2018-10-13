@@ -56,7 +56,9 @@ const pizzas = [
   vegetariana,
   chocolate,
   prestigio,
-  romeuJulieta
+  romeuJulieta,
+  prestigio,
+  chocolate,
 ];
 
 pizzasSalgadas = (pizza$) => pizza$.pipe(
@@ -67,7 +69,7 @@ pizzasSalgadas = (pizza$) => pizza$.pipe(
 
 pizzasDoces = (pizza$) => pizza$.pipe(
   filter(pizza => pizza.type === 'Doce'),
-  take(1)
+  take(3)
 );
 
 const sourcePizzas$ = from(pizzas);
@@ -116,9 +118,7 @@ setPizza = (pizza) => {
   pessoa3.next(pizza);
 }
 
-pizzas.forEach(pizza => {
-  setPizza(pizza);
-});
+pizzas.forEach(pizza => setPizza(pizza));
 
 console.log(`pizzasPessoa1: ${JSON.stringify(pizzasPessoa1, null, 2)}`);
 console.log(`pizzasPessoa2: ${JSON.stringify(pizzasPessoa2, null, 2)}`);
